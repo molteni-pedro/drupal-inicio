@@ -33,3 +33,4 @@ traefik.yml
 /sites/simpletest
 # Ignore .env files as they are personal
 /.env
+/nbproject/private/

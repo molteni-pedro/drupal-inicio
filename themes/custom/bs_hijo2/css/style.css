@@ -1,0 +1,19 @@
+/**
+ * If using a CSS pre-processor, tell it to overwrite this file. If not, place
+ * your custom CSS modifications here.
+ */
+footer{
+    background-color: #000;
+    width: 100%;
+}
+footer div nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: baseline;
+}
+footer a{
+    color: #fff;
+}
+

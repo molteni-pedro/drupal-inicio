@@ -1,0 +1,5 @@
+# Schema for the theme setting configuration file of the Bs_hijo2 theme.
+
+bs_hijo2.settings:
+  type: theme_settings
+  label: 'Bs_hijo2 settings'
