@@ -79,13 +79,36 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label and not page %}
+  <div class="col-md-3">
+    {{ content.field_imagen }}
+  </div>
+  <div class="col-md-9">
     <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
+    {{ content.field_feche_emision }}
+    {{ content.body }}
+  </div>
   {% endif %}
   {{ title_suffix }}
 
-  {% if display_submitted %}
+
+
+  <div{{ content_attributes.addClass('content') }}>
+    {% if page %}
+    <h2{{ title_attributes }}>
+      {{ label }}
+    </h2>
+    {% if logged_in %}
+      {{ content.field_video_yt_ }}
+    {% endif %}
+
+    {% if logged_in == false %}
+     {{ content.field_imagen }}
+    {% endif %}
+    
+
+    {% if display_submitted %}
     <footer>
       {{ author_picture }}
       <div{{ author_attributes.addClass('author') }}>
@@ -95,20 +118,8 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('content') }}>
-    {% if page %}
-      <h2{{ title_attributes }}>
-        {{ label }}
-      </h2>
     {% endif %}  
-
-    {% if logged_in %}
-      {{ content.field_video_yt_ }}
-    {% endif %}
-
-    {% if logged_in == false %}
-     {{ content.field_imagen }}
-    {% endif %}
-    </div>
+    <!-- endif page -->
+  </div>
 
 </article>
