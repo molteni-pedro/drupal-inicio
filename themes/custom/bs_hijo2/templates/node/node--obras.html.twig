@@ -96,11 +96,18 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('content') }}>
-      {% if logged_in %}
-    {{ content.field_video_yt_ }}
+    {% if page %}
+      <h2{{ title_attributes }}>
+        {{ label }}
+      </h2>
+    {% endif %}  
+
+    {% if logged_in %}
+      {{ content.field_video_yt_ }}
     {% endif %}
-        {% if logged_in == false %}
-    {{ content.field_imagen }}
+
+    {% if logged_in == false %}
+     {{ content.field_imagen }}
     {% endif %}
     </div>
 
