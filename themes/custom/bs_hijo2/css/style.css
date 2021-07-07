@@ -2,8 +2,19 @@
  * If using a CSS pre-processor, tell it to overwrite this file. If not, place
  * your custom CSS modifications here.
  */
+
+/*HEADER*/
+ul.navbar-nav{
+    float: right;
+}
+@media screen and (max-width: 767px) {
+ul.navbar-nav{
+    float: left;
+}
+}
+/*FOOTER*/
 footer{
-    background-color: #000;
+    background-color: #777;
     width: 100%;
 }
 footer div nav ul{
