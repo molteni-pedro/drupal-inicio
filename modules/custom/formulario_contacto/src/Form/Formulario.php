@@ -55,7 +55,7 @@ protected $emailValidator;
         //'callback' => [$this, 'myAjaxCallback'], //alternative notation
         'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
         'event' => 'change',
-        'wrapper' => 'adjunto', // This element is updated with this AJAX callback.
+        'wrapper' => 'edit-adjunto', // This element is updated with this AJAX callback.
         'progress' => [
           'type' => 'throbber',
           'message' => $this->t('Verifying entry...'),

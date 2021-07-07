@@ -16,6 +16,23 @@ ul.navbar-nav{
 
 }
 }
+
+/*slider principal*/
+
+.slick--view--slider-principal h2.slide__title{position: absolute;
+    top: 80px;
+    left: 20px;
+}
+.slick--view--slider-principal .slide__overlay{
+    position: absolute;
+    top: 138px;
+    color: white;
+}
+.slick--view--slider-principal .slide__link{
+      position: absolute;
+    top: 225px;
+    color: white;
+}
 /*FOOTER*/
 footer{
     background-color: #777;
