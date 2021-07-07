@@ -29,7 +29,9 @@
         "drupal/devel": "2.1",
         "drupal/slick": "2.3",
         "drupal/slick_views": "2.4",
-        "drupal/vardumper": "^1.6"
+        "drupal/twig_vardumper": "2.2",
+        "drupal/vardumper": "^1.6",
+        "drupal/youtube": "1.2"
     },
     "conflict": {
         "drupal/drupal": "*"

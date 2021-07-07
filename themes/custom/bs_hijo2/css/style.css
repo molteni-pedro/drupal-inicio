@@ -20,18 +20,41 @@ ul.navbar-nav{
 /*slider principal*/
 
 .slick--view--slider-principal h2.slide__title{position: absolute;
-    top: 80px;
+    top: 45px;
     left: 20px;
 }
 .slick--view--slider-principal .slide__overlay{
     position: absolute;
     top: 138px;
+    left: 20px;
     color: white;
 }
 .slick--view--slider-principal .slide__link{
-      position: absolute;
+    position: absolute;
     top: 225px;
+    left: 20px;
     color: white;
+}
+.slick--view--slider-principal .slide__link a{
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 767px) {
+.slick--view--slider-principal h2.slide__title{position: absolute;
+    top: 10px;
+    font-size:x-large;
+
+}
+.slick--view--slider-principal .slide__overlay{
+   
+    top: 70px;
+    font-size: smaller;
+}
+.slick--view--slider-principal .slide__link{
+    top: 170px;
+}
+
 }
 /*FOOTER*/
 footer{

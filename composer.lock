@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "630a5e24cdb4e6ec7cabe3c1308f2644",
+    "content-hash": "2e1012cd85c4cac02d33438f0a2469f0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1436,6 +1436,58 @@
             }
         },
         {
+            "name": "drupal/twig_vardumper",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twig_vardumper.git",
+                "reference": "8.x-2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twig_vardumper-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "2b42f2a88fe9731edf0e055745b981ca20e32678"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "symfony/var-dumper": "~4.2|~5"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.2",
+                    "datestamp": "1591885101",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Ruben Egiguren a.k.a keopx",
+                    "homepage": "https://www.drupal.org/user/377362",
+                    "email": "keopx@keopx.net"
+                }
+            ],
+            "description": "Twig vardumper provides a better dump() and vardumper() function that can help you debug Twig variables.",
+            "homepage": "https://www.drupal.org/project/twig_vardumper",
+            "keywords": [
+                "Development",
+                "Drupal",
+                "Twig"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/twig_vardumper",
+                "issues": "https://www.drupal.org/project/issues/twig_vardumper"
+            }
+        },
+        {
             "name": "drupal/vardumper",
             "version": "1.6.0",
             "source": {
@@ -1490,6 +1542,62 @@
             "homepage": "https://www.drupal.org/project/vardumper",
             "support": {
                 "source": "https://git.drupalcode.org/project/vardumper"
+            }
+        },
+        {
+            "name": "drupal/youtube",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/youtube.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/youtube-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "05a991e7ecf21f1c5f86a19ec3c37855b442b37d"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1591803266",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "guschilds",
+                    "homepage": "https://www.drupal.org/user/1468898"
+                },
+                {
+                    "name": "jenlampton",
+                    "homepage": "https://www.drupal.org/user/85586"
+                },
+                {
+                    "name": "pferlito",
+                    "homepage": "https://www.drupal.org/user/511172"
+                },
+                {
+                    "name": "zvse",
+                    "homepage": "https://www.drupal.org/user/2870933"
+                }
+            ],
+            "description": "Defines a YouTube video and thumbnail field type.",
+            "homepage": "https://www.drupal.org/project/youtube",
+            "support": {
+                "source": "https://git.drupalcode.org/project/youtube"
             }
         },
         {
