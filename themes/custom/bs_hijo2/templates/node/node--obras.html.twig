@@ -86,7 +86,7 @@
     <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
-    {{ content.field_feche_emision }}
+    {{ content.field_fecha_de_emision }}
     {{ content.body }}
   </div>
   {% endif %}
@@ -96,9 +96,7 @@
 
   <div{{ content_attributes.addClass('content') }}>
     {% if page %}
-    <h2{{ title_attributes }}>
-      {{ label }}
-    </h2>
+   
     {% if logged_in %}
       {{ content.field_video_yt_ }}
     {% endif %}
@@ -106,8 +104,40 @@
     {% if logged_in == false %}
      {{ content.field_imagen }}
     {% endif %}
+     <h2{{ title_attributes }}>
+      {{ label }}
+    </h2>
     
+    <!-- TABS--><div class="container">
+    <div class="row">
+		<div class="col-md-12">
+						<div class="tabbable-panel">
+				<div class="tabbable-line">
+					<ul class="nav nav-tabs ">
+						<li class="active">
+							<a href="#tab_default_1" data-toggle="tab">
+							{{ 'Descripción'|t }} </a>
+						</li>
+						<li>
+							<a href="#tab_default_2" data-toggle="tab">
+							{{ 'Ficha técnica'|t }} </a>
+						</li>
 
+					</ul>
+                                         {{   vardumper() }}
+					<div class="tab-content">
+                                                <div class="tab-pane active" id="tab_default_1">
+                                                    {{ content.field_descripcion }}
+                                                   </div>
+						<div class="tab-pane" id="tab_default_2">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+                    </div>
+                </div>
+    <!-- END TABS -->
     {% if display_submitted %}
     <footer>
       {{ author_picture }}

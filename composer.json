@@ -27,6 +27,7 @@
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
         "drupal/devel": "2.1",
+        "drupal/forms_to_email-forms_to_email": "1.2",
         "drupal/slick": "2.3",
         "drupal/slick_views": "2.4",
         "drupal/twig_vardumper": "2.2",

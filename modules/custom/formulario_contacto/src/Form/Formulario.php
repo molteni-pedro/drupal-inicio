@@ -5,10 +5,16 @@ namespace Drupal\formulario_contacto\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Egulias\EmailValidator\EmailValidator;
+use Drupal\user\UserAuthInterface;
 
 class Formulario extends FormBase {
   
+ 
 protected $emailValidator;
+
+protected function currentUser() {
+  return \Drupal::currentUser();
+}
 
   public function getFormId(){
     return 'formulario_contacto';
@@ -24,26 +30,40 @@ protected $emailValidator;
    * @return array
    *   The form structure.
    */
+ 
   public function buildForm(array $form, FormStateInterface $form_state) {
-
+    $user = \Drupal::currentUser();
+    $logged_in = \Drupal::currentUser()->isAuthenticated();
+    $user_email = $user->getEmail();
+    
     $form['description'] = [
       '#type' => 'item',
       '#markup' => $this->t('Para conctactar con nosotros, por favor rellene el siguiente formulario.'),
     ];
-
-    
-    $form['email'] = [
-      '#type' => 'email',
-      '#title' => $this->t('Correo electrónico'),
-      '#description' => $this->t('Correo electrónico.'),
-      '#required' => TRUE,
+    if($logged_in=="1"){
+      $form['email'] = [
+        '#type' => 'email',
+        '#title' => $this->t('Correo electrónico login'),
+        '#description' => $this->t('Correo electrónico.'),
+        '#required' => TRUE,
+        '#default_value' => $user_email,
+        '#disabled' => TRUE,
     ];
+    }else{
+       $form['email'] = [
+        '#type' => 'email',
+        '#title' => $this->t('Correo electrónico'),
+        '#description' => $this->t('Correo electrónico.'),
+        '#required' => TRUE,
+        '#disabled' => FALSE,
+
+    ];
+    }
     
     
     $form['asunto'] = [
       '#type' => 'select',
-      '#title' => $this
-        ->t('¿Que tipo de ayuda necesita?'),
+      '#title' => $this->t('¿Que tipo de ayuda necesita?'),
       '#options' => [
         '1' => $this
           ->t('Contacto simple'),
@@ -55,12 +75,20 @@ protected $emailValidator;
         //'callback' => [$this, 'myAjaxCallback'], //alternative notation
         'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
         'event' => 'change',
-        'wrapper' => 'edit-adjunto', // This element is updated with this AJAX callback.
+        'wrapper' => 'edit-output', // This element is updated with this AJAX callback.
         'progress' => [
           'type' => 'throbber',
           'message' => $this->t('Verifying entry...'),
         ],
       ]
+    ];
+    $form['output'] = [
+      '#type' => 'textfield',
+      '#size' => '60',
+      '#disabled' => TRUE,
+      '#value' => 'Hello, Drupal!!1',      
+      '#prefix' => '<div id="edit-output">',
+      '#suffix' => '</div>',
     ];
     
    $form['adjunto'] = array(
@@ -72,7 +100,7 @@ protected $emailValidator;
  
     
     $form['descripcion'] = [
-      '#type' => 'textfield',
+      '#type' => 'textarea',
       '#title' => $this->t('Descripcion'),
       '#description' => $this->t('¿En que podemos ayudarle?.'),
       '#required' => TRUE,
@@ -97,6 +125,19 @@ protected $emailValidator;
     return $form;
 
   }
+// Get the value from example select field and fill
+// the textbox with the selected text.
+public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
+  // Prepare our textfield. check if the example select field has a selected option.
+  if ($selectedValue = $form_state->getValue('asunto')) {
+      // Get the text of the selected option.
+      $selectedText = $form['asunto']['#options'][$selectedValue];
+      // Place the text of the selected option in our textfield.
+      $form['output']['#value'] = $selectedText;
+  }
+  // Return the prepared textfield.
+  return $form['output']; 
+}
     /**
    * Validate the title and the checkbox of the form
    * 
@@ -106,11 +147,7 @@ protected $emailValidator;
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
-    
-    $usuario_actual= Drupal::currentUser( ) -> id( );
-    $detalle_usuario = \Drupal\user\Entity\User::load($usuario_actual );
-    echo ($detalle_usuario);
-
+   
     $descripcion = $form_state->getValue('descripcion');
     $asunto = $form_state->getValue('asunto');
 
@@ -149,4 +186,9 @@ protected $emailValidator;
     $form_state->setRedirect('<front>');
 
   } 
+  
+ // Get the value from example select field and fill
+// the textbox with the selected text.
+
 }
+

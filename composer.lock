@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e1012cd85c4cac02d33438f0a2469f0",
+    "content-hash": "f0bf1e19133a36574eb2245ab99d4870",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1321,6 +1321,53 @@
                 "source": "http://cgit.drupalcode.org/devel",
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/forms_to_email-forms_to_email",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/forms_to_email.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/forms_to_email-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "014dd1facb3a01d912f5a47bf378212d3c243025"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1524068280",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "deepakkm",
+                    "homepage": "https://www.drupal.org/user/3112411"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/forms_to_email",
+            "support": {
+                "source": "https://git.drupalcode.org/project/forms_to_email"
             }
         },
         {

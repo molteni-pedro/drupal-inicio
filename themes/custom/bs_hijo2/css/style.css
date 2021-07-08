@@ -87,7 +87,28 @@ ul .menu--footer2{
     justify-content: center;
     align-items: center;
 }
+.menu--footer2 .first {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: stretch;
+    justify-content: center;
+    color: white;
+  
+}
+.menu--footer2 .first .navbar-text{
+    margin-right: 5px;
+}
 footer a{
     color: #fff;
 }
 
+/*OBRAS LISTADO*/
+
+.views-row .obras{
+  margin: 20px 0px 20px 0px; 
+ padding: 5px 0px 5px 0px; 
+  border-top: solid 1px;
+}
