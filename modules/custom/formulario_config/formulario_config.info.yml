@@ -1,0 +1,5 @@
+name: Formulario config
+description: Formulario de config
+type: module
+core: 8.x
+

@@ -1,0 +1,6 @@
+; $Id:
+name: Menu configuracion
+description: Menu configuracion para el email donde se recibiran los correos del formulario de contacto
+type: module
+core: 8.x
+

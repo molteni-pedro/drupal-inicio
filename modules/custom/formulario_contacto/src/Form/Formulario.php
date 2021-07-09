@@ -183,7 +183,7 @@ protected function currentUser() {
    
 
     // Redirect to home
-   // $form_state->setRedirect('<front>');
+    $form_state->setRedirect('<front>');
 
   } 
   

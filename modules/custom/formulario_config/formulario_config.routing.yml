@@ -1,0 +1,7 @@
+formulario_config.Formulario_config:
+  path: '/form-config'
+  defaults:
+    _form: '\Drupal\formulario_config\Form\Formulario_config'
+    _title: 'Formulario de configuracion'
+  requirements:
+    _permission: 'access content'

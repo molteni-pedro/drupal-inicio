@@ -1,0 +1,41 @@
+<?php
+
+/* 
+ * @file
+* Add a "Custom Menu" link to Drupal's main administration menu.
+*/
+
+/**
+ * Implementation of hook_help()
+ */
+function menu_ceser_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#menu_config':
+      return '<p>' . t('This module add a "Custom Menu link" to Drupal\'s main administration menu') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function menu_custom_menu() {
+  $items = array();
+
+  $items['admin/menu_config'] = array(
+      'title' => 'menu config',
+      'description' => 'A custom menu',
+      'page callback' => 'menu_custom_page_content',
+      'type' => MENU_NORMAL_ITEM,
+      'access callback' => true,
+      'weight' => 11
+  );
+
+  return $items;
+}
+
+/*
+ * Content of the page of the custom menu
+*/
+function menu_custom_page_content() {
+  return '<h2>PAGE CONTENT</h2>';
+}
