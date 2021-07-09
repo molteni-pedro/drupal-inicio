@@ -19,7 +19,8 @@ ul.navbar-nav{
 
 /*slider principal*/
 
-.slick--view--slider-principal h2.slide__title{position: absolute;
+.slick--view--slider-principal h2.slide__title{
+    position: absolute;
     top: 45px;
     left: 20px;
 }
@@ -113,3 +114,72 @@ footer a{
  padding: 5px 0px 5px 0px; 
   border-top: solid 1px;
 }
+
+/*SLIDER SECUNDARIO*/
+  .block-views-blockslider-secundario-block-1 .block-title {
+    font-weight: 900;
+    text-align: center;
+    font-size: xx-large;
+    }
+    .slick__arrow{
+        top: -10%;
+    }
+    #slick-views-slider-secundario-block-1-2-slider{
+        transform:translateX(4%);
+    }
+div .slick__slide .views-field{
+    color: white;
+}
+div .slick__slide .views-field-title {
+    
+    position: absolute;
+    top: 40px;
+    margin-left: 16px;
+
+}
+
+div .slick__slide .views-field-body {
+    
+    position: absolute;
+    top: 70px;
+    margin-left: 16px;
+  
+}
+div .slick__slide .views-field-field-enlace {
+    
+    position: absolute;
+    top: 180px;
+    margin-left: 16px;
+    color: white;
+  
+}
+div .slick__slide .views-field-field-enlace a {
+    
+    color: white;
+  
+}
+@media screen and (max-width: 767px) {
+div .slick__slide .views-field-title {
+    
+    position: absolute;
+    top: 40px;
+    margin-left: 16px;
+
+}
+
+div .slick__slide .views-field-body {
+    
+    position: absolute;
+    top: 70px;
+    margin-left: 16px;
+  
+}
+div .slick__slide .views-field-field-enlace {
+    
+    position: absolute;
+    top: 120px;
+    margin-left: 16px;
+  
+}
+}
+/**/

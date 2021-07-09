@@ -70,17 +70,17 @@ protected function currentUser() {
         '2' => $this
           ->t('Contacto complejo'),
       ],
-      '#ajax' => [
-        'callback' => '::myAjaxCallback', // don't forget :: when calling a class method.
-        //'callback' => [$this, 'myAjaxCallback'], //alternative notation
-        'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
-        'event' => 'change',
-        'wrapper' => 'edit-output', // This element is updated with this AJAX callback.
-        'progress' => [
-          'type' => 'throbber',
-          'message' => $this->t('Verifying entry...'),
-        ],
-      ]
+//      '#ajax' => [
+//        'callback' => '::myAjaxCallback', // don't forget :: when calling a class method.
+//        //'callback' => [$this, 'myAjaxCallback'], //alternative notation
+//        'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
+//        'event' => 'change',
+//        'wrapper' => 'edit-output', // This element is updated with this AJAX callback.
+//        'progress' => [
+//          'type' => 'throbber',
+//          'message' => $this->t('Verifying entry...'),
+//        ],
+//      ]
     ];
     $form['output'] = [
       '#type' => 'textfield',
@@ -127,17 +127,17 @@ protected function currentUser() {
   }
 // Get the value from example select field and fill
 // the textbox with the selected text.
-public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
-  // Prepare our textfield. check if the example select field has a selected option.
-  if ($selectedValue = $form_state->getValue('asunto')) {
-      // Get the text of the selected option.
-      $selectedText = $form['asunto']['#options'][$selectedValue];
-      // Place the text of the selected option in our textfield.
-      $form['output']['#value'] = $selectedText;
-  }
-  // Return the prepared textfield.
-  return $form['output']; 
-}
+//public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
+//  // Prepare our textfield. check if the example select field has a selected option.
+//  if ($selectedValue = $form_state->getValue('asunto')) {
+//      // Get the text of the selected option.
+//      $selectedText = $form['asunto']['#options'][$selectedValue];
+//      // Place the text of the selected option in our textfield.
+//      $form['output']['#value'] = $selectedText;
+//  }
+//  // Return the prepared textfield.
+//  return $form['output']; 
+//}
     /**
    * Validate the title and the checkbox of the form
    * 
