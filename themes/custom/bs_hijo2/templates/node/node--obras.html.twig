@@ -108,35 +108,36 @@
       {{ label }}
     </h2>
     
-    <!-- TABS--><div class="container">
-    <div class="row">
-		<div class="col-md-12">
-						<div class="tabbable-panel">
-				<div class="tabbable-line">
-					<ul class="nav nav-tabs ">
-						<li class="active">
-							<a href="#tab_default_1" data-toggle="tab">
-							{{ 'Descripción'|t }} </a>
-						</li>
-						<li>
-							<a href="#tab_default_2" data-toggle="tab">
-							{{ 'Ficha técnica'|t }} </a>
-						</li>
-
-					</ul>
-                                         {{   vardumper() }}
-					<div class="tab-content">
-                                                <div class="tab-pane active" id="tab_default_1">
-                                                    {{ content.field_descripcion }}
-                                                   </div>
-						<div class="tab-pane" id="tab_default_2">
-							
-						</div>
-					</div>
-				</div>
-			</div>
+    <!-- TABS-->
+    <div class="container">
+        <div class="row">
+                    <div class="col-md-12">
+                            <div class="tabbable-panel">
+                                    <div class="tabbable-line">
+                                            <ul class="nav nav-tabs ">
+                                                    <li class="active">
+                                                            <a href="#tab_default_1" data-toggle="tab">
+                                                            {{ 'Descripción'|t }}
+                                                            </a>
+                                                    </li>
+                                                    <li>
+                                                            <a href="#tab_default_2" data-toggle="tab">
+                                                            {{ 'Ficha técnica'|t }}
+                                                            </a>
+                                                    </li>
+                                            </ul>                                       
+                                            <div class="tab-content">
+                                                    <div class="tab-pane active" id="tab_default_1">
+                                                        {{ content.field_descripcion }}
+                                                       </div>
+                                                    <div class="tab-pane" id="tab_default_2">
+                                                            {{ content.field_ficha_artistica }}
+                                                    </div>
+                                            </div>
+                                    </div>
+                            </div>
                     </div>
-                </div>
+            </div>
     <!-- END TABS -->
     {% if display_submitted %}
     <footer>

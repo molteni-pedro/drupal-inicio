@@ -43,7 +43,7 @@ protected function currentUser() {
     if($logged_in=="1"){
       $form['email'] = [
         '#type' => 'email',
-        '#title' => $this->t('Correo electrónico login'),
+        '#title' => $this->t('Correo electrónico'),
         '#description' => $this->t('Correo electrónico.'),
         '#required' => TRUE,
         '#default_value' => $user_email,
@@ -183,7 +183,7 @@ public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
    
 
     // Redirect to home
-    $form_state->setRedirect('<front>');
+   // $form_state->setRedirect('<front>');
 
   } 
   
