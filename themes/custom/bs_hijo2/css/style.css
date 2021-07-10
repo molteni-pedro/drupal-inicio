@@ -11,55 +11,108 @@ ul.navbar-nav{
     width: 32px;
 }
 @media screen and (max-width: 767px) {
-ul.navbar-nav{
-    float: left;
+    ul.navbar-nav{
+        float: left;
 
+    }
 }
+
+/*slider principal*/   
+.block-views-blockslider-secundario-block-1{
+    background: radial-gradient(black, transparent);
 }
-
-/*slider principal*/
-
 .slick--view--slider-principal h2.slide__title{
-    position: absolute;
-    top: 45px;
+     position: absolute;
+    top: 80px;
     left: 20px;
+    font-size: xxx-large;
+    font-weight: 700;
+    color: wheat;
 }
 .slick--view--slider-principal .slide__overlay{
-    position: absolute;
-    top: 138px;
+  position: absolute;
+    top: 170px;
     left: 20px;
     color: white;
+    font-size: x-large;
+    width: 70%;
 }
 .slick--view--slider-principal .slide__link{
-    position: absolute;
-    top: 225px;
-    left: 20px;
+ position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translate(-50%, 0);
     color: white;
+    font-size: xx-large;
+    border: solid 1px white;
+    padding: 15px;
 }
 .slick--view--slider-principal .slide__link a{
     text-decoration: none;
     color: white;
 }
 
-@media screen and (max-width: 767px) {
-.slick--view--slider-principal h2.slide__title{position: absolute;
-    top: 10px;
-    font-size:x-large;
+@media screen and (max-width: 1000px) {
+        .slick--view--slider-principal h2.slide__title{position: absolute;
+            top: 25px;
+            font-size:x-large;
+
+        }
+        .slick--view--slider-principal .slide__overlay{
+
+            top: 80px;
+            font-size: larger;
+        }
+        .slick--view--slider-principal .slide__link{
+            top: 120px;
+            font-size: x-large;
+            border: solid 1px white;
+            padding: 15px;
+        }
 
 }
-.slick--view--slider-principal .slide__overlay{
-   
-    top: 70px;
-    font-size: smaller;
+
+@media screen and (max-width: 767px) {
+        .slick--view--slider-principal h2.slide__title{position: absolute;
+            top: 10px;
+            font-size:x-large;
+
+        }
+        .slick--view--slider-principal .slide__overlay{
+
+            top: 70px;
+            font-size: smaller;
+        }
+        .slick--view--slider-principal .slide__link{
+            top: 80px;
+            font-size: medium;
+        }
+
 }
-.slick--view--slider-principal .slide__link{
-    top: 170px;
-}
+@media screen and (max-width: 500px) {
+        .slick--view--slider-principal h2.slide__title{position: absolute;
+            top: 10px;
+            font-size:medium;
+
+        }
+        .slick--view--slider-principal .slide__overlay{
+
+            top: 50px;
+             font-size:xx-small;
+
+        }
+        .slick--view--slider-principal .slide__link{
+            top: 90px;
+            font-size: smaller;
+            margin: auto;
+            padding: 3px;
+
+        }
 
 }
 /*FOOTER*/
 footer{
-    background-color: #777;
+    background-color: black;
     width: 100%;
 
 
@@ -82,7 +135,7 @@ footer > div > nav > ul{
     align-items: center;
 }
 ul .menu--footer2{
-        display: flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
@@ -106,6 +159,13 @@ ul .menu--footer2{
 footer a{
     color: #fff;
 }
+@media screen and (max-width: 550px) {
+
+        .footer{
+                font-size: x-small;
+            }
+}
+
 
 /*OBRAS LISTADO*/
 
@@ -114,72 +174,99 @@ footer a{
  padding: 5px 0px 5px 0px; 
   border-top: solid 1px;
 }
+/*NODO OBRA FINAL*/
+
+.field--name-field-descripcion{
+    padding-top: 25px;
+    width: 85%;
+}
 
 /*SLIDER SECUNDARIO*/
-  .block-views-blockslider-secundario-block-1 .block-title {
+
+.block-views-blockslider-secundario-block-1 .block-title {
     font-weight: 900;
     text-align: center;
     font-size: xx-large;
     }
-    .slick__arrow{
-        top: -10%;
+.slick__arrow{
+    top: -10%;
     }
-    #slick-views-slider-secundario-block-1-2-slider{
-        transform:translateX(4%);
+#slick-views-slider-secundario-block-1-2-slider{
+    transform:translateX(3%);
     }
 div .slick__slide .views-field{
     color: white;
 }
 div .slick__slide .views-field-title {
-    
     position: absolute;
     top: 40px;
     margin-left: 16px;
-
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #0000008c;
+ 
 }
 
-div .slick__slide .views-field-body {
-    
+div .slick__slide .views-field-body {    
     position: absolute;
     top: 70px;
     margin-left: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #0000008c;
   
 }
-div .slick__slide .views-field-field-enlace {
-    
+div .slick__slide .views-field-field-enlace {    
     position: absolute;
     top: 180px;
     margin-left: 16px;
-    color: white;
-  
+    color: white;  
 }
-div .slick__slide .views-field-field-enlace a {
-    
-    color: white;
-  
+div .slick__slide .views-field-field-enlace a {    
+    color: white;    
+    background-color: #0000008c;
+    padding: 5px;
+    border-radius: 13px;  
 }
+
 @media screen and (max-width: 767px) {
-div .slick__slide .views-field-title {
-    
-    position: absolute;
-    top: 40px;
-    margin-left: 16px;
+
+        #slick-views-slider-secundario-block-1-2-slider{
+                transform:translateX(7%);
+            }
+        div .slick__slide .views-field-title {
+
+            position: absolute;
+            top: 40px;
+            margin-left: 16px;
+
+        }
+
+        div .slick__slide .views-field-body {
+
+            position: absolute;
+            top: 70px;
+            margin-left: 16px;
+
+        }
+        div .slick__slide .views-field-field-enlace {
+
+            position: absolute;
+            top: 120px;
+            margin-left: 16px;
+
+        }
+        .slick__arrow{
+                top: -6%;
+        }
+
 
 }
-
-div .slick__slide .views-field-body {
-    
-    position: absolute;
-    top: 70px;
-    margin-left: 16px;
-  
-}
-div .slick__slide .views-field-field-enlace {
-    
-    position: absolute;
-    top: 120px;
-    margin-left: 16px;
-  
-}
-}
+/*@media screen and (max-width: 450px) {
+    li .slide__grid {
+        
+        width: 85%;
+    }
+     
+}*/
 /**/

@@ -1,0 +1,33 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function formulario_config_schema() {
+  $schema['formulario_config'] = [
+    'description' => 'Track where a file is used.',
+    'fields' => [
+      'fid' => [
+        'description' => 'File ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'emial' => [
+        'description' => 'email asociado a formulario de configurarion.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+       ],
+    ],
+    'primary key' => ['fid', 'type', 'id', 'module'],
+    'indexes' => [
+      'type_id' => ['type', 'id'],
+      'fid_count' => ['fid', 'count'],
+      'fid_module' => ['fid', 'module'],
+    ],
+  ];
+  return $schema;
+}
