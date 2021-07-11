@@ -38,9 +38,16 @@
       %}
          <li{{ item.attributes.addClass(item_classes) }}>           
                 {% if item.title=="copyright @" %}
+                         <a href="/drupal-inicio" class="img_footer" >
+                        <img src="{{ url('<front>') }}{{ directory }}themes/custom/bs_hijo2/wolf.png" alt="image"/>
+                    </a> 
                      <span class="year"> 
                     {{ post.published_at|date("Y") }}
                     </span> 
+                  
+                {% endif %}
+                 {% if link_title=="copyright @" %}
+                  
                 {% endif %}
                 {% set link_title = item.title %}
         {% set link_attributes = item.link_attributes %}

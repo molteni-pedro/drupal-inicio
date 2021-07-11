@@ -3,6 +3,10 @@
  * your custom CSS modifications here.
  */
 
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 /*HEADER*/
 ul.navbar-nav{
     float: right;
@@ -159,6 +163,15 @@ ul .menu--footer2{
 footer a{
     color: #fff;
 }
+
+.img_footer img{
+    width: 32px;
+}
+
+ul li .active-trail{
+    display: none;
+}
+
 @media screen and (max-width: 550px) {
 
         .footer{
@@ -213,9 +226,13 @@ div .slick__slide .views-field-body {
     margin-left: 16px;
     font-weight: 700;
     text-transform: uppercase;
-    background-color: #0000008c;
+   
   
 }
+    div .slick__slide .views-field p{
+           background-color: #0000008c;
+        }        
+
 div .slick__slide .views-field-field-enlace {    
     position: absolute;
     top: 180px;
@@ -259,7 +276,18 @@ div .slick__slide .views-field-field-enlace a {
         .slick__arrow{
                 top: -6%;
         }
-
+        
+        .grid__content .slick__slide {
+            
+            width: 85%;
+        }
+        div .slick__slide .views-field{
+            color: white;
+            background-color: none;
+        }
+       div .slick__slide .views-field p{
+            width: 80%;
+         }        
 
 }
 /*@media screen and (max-width: 450px) {
