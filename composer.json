@@ -32,6 +32,7 @@
         "drupal/slick_views": "2.4",
         "drupal/twig_vardumper": "2.2",
         "drupal/vardumper": "^1.6",
+        "drupal/webform": "5.27",
         "drupal/youtube": "1.2"
     },
     "conflict": {

@@ -1,0 +1,9 @@
+formulario_contacto:
+  js:
+    js/formulario_contacto.js: {}
+  dependencies:
+    - core/drupal.ajax
+    - core/jquery
+    - core/ jquery.once
+    - core/ drupal
+    - ckeditor/drupal.ckeditor

@@ -5,7 +5,8 @@ namespace Drupal\formulario_contacto\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Egulias\EmailValidator\EmailValidator;
-use Drupal\user\UserAuthInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+
 
 class Formulario extends FormBase {
   
@@ -71,26 +72,17 @@ protected function currentUser() {
           ->t('Contacto complejo'),
       ],
 //      '#ajax' => [
-//        'callback' => '::myAjaxCallback', // don't forget :: when calling a class method.
-//        //'callback' => [$this, 'myAjaxCallback'], //alternative notation
-//        'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
+//        'callback' => '::myAjaxCallback', // 
+//      //'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
 //        'event' => 'change',
-//        'wrapper' => 'edit-output', // This element is updated with this AJAX callback.
+//        'wrapper' => 'edit-adjunto', 
 //        'progress' => [
 //          'type' => 'throbber',
 //          'message' => $this->t('Verifying entry...'),
 //        ],
 //      ]
     ];
-    $form['output'] = [
-      '#type' => 'textfield',
-      '#size' => '60',
-      '#disabled' => TRUE,
-      '#value' => 'Hello, Drupal!!1',      
-      '#prefix' => '<div id="edit-output">',
-      '#suffix' => '</div>',
-    ];
-    
+
    $form['adjunto'] = array(
     '#type' => 'file',
   	'#title' => t('Archivo adjunto'),
@@ -108,15 +100,10 @@ protected function currentUser() {
     ];
      
 
-
-    // Group submit handlers in an actions element with a key of "actions" so
-    // that it gets styled correctly, and so that other modules may add actions
-    // to the form. This is not required, but is convention.
     $form['actions'] = [
       '#type' => 'actions',
     ];
 
-    // Add a submit button that handles the submission of the form.
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
@@ -125,19 +112,7 @@ protected function currentUser() {
     return $form;
 
   }
-// Get the value from example select field and fill
-// the textbox with the selected text.
-//public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
-//  // Prepare our textfield. check if the example select field has a selected option.
-//  if ($selectedValue = $form_state->getValue('asunto')) {
-//      // Get the text of the selected option.
-//      $selectedText = $form['asunto']['#options'][$selectedValue];
-//      // Place the text of the selected option in our textfield.
-//      $form['output']['#value'] = $selectedText;
-//  }
-//  // Return the prepared textfield.
-//  return $form['output']; 
-//}
+
     /**
    * Validate the title and the checkbox of the form
    * 
@@ -172,23 +147,16 @@ protected function currentUser() {
    *   The current state of the form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
-    // Display the results.
     
-    // Call the Static Service Container wrapper
-    // We should inject the messenger service, but its beyond the scope of this example.
     $messenger = \Drupal::messenger();
     $messenger->addMessage('Formulario enviado ');
-    $messenger->addMessage('Descripción: '.$form_state->getValue('descripcion'));
-   
+    $messenger->addMessage('Descripción: '.$form_state->getValue('descripcion'));   
 
     // Redirect to home
     $form_state->setRedirect('<front>');
 
   } 
-  
- // Get the value from example select field and fill
-// the textbox with the selected text.
+ 
 
 }
 
