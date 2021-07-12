@@ -4,15 +4,32 @@ namespace Drupal\formulario_contacto\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Mail\MailManagerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Egulias\EmailValidator\EmailValidator;
-use Drupal\Core\Ajax\AjaxResponse;
 
 
 class Formulario extends FormBase {
   
- 
+protected $mailManager;
+protected $languageManager;
 protected $emailValidator;
 
+public function __construct(MailManagerInterface $mail_manager,
+  LanguageManagerInterface $language_manager,
+  EmailValidator $email_validator) {
+  $this->mailManager = $mail_manager;
+  $this->languageManager = $language_manager;
+  $this->emailValidator = $email_validator;
+}
+public static function create(ContainerInterface $container) {
+return new static(
+  $container->get('plugin.manager.mail'),
+  $container->get('language_manager'),
+  $container->get('email.validator')
+  );
+}
 protected function currentUser() {
   return \Drupal::currentUser();
 }
@@ -144,12 +161,21 @@ protected function currentUser() {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     
-    $messenger = \Drupal::messenger();
-    $messenger->addMessage('Formulario enviado ');
-    $messenger->addMessage('Descripción: '.$form_state->getValue('descripcion'));   
-
-    // Redirect to home
-    $form_state->setRedirect('<front>');
+      $form_values = $form_state->cleanValues()->getValues();
+      $module = 'formulario_contacto';
+      $key = 'contact_message';
+      $to = $form_values['manolo_25vs@hotmail.com'];
+      $params = $form_values;
+      $language_code = $this->languageManager->getDefaultLanguage()->getId();
+      $send_now = TRUE;
+      $result = $this->mailManager->mail($module, $key, $to, $language_code, $params, NULL, $send_now);
+      if ($result['result'] == TRUE) {
+      drupal_set_message($this->t('Your message has been sent.'));
+      } else {
+      drupal_set_message($this->t('There was a problem sending your messageand it was not sent.'), 'error');
+      }
+      
+      $form_state->setRedirect('<front>');
 
   } 
   public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
