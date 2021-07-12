@@ -37,7 +37,7 @@ protected function currentUser() {
     $logged_in = \Drupal::currentUser()->isAuthenticated();
     $user_email = $user->getEmail();
     
-    $form['description'] = [
+    $form['consejo'] = [
       '#type' => 'item',
       '#markup' => $this->t('Para conctactar con nosotros, por favor rellene el siguiente formulario.'),
     ];
@@ -71,25 +71,19 @@ protected function currentUser() {
         '2' => $this
           ->t('Contacto complejo'),
       ],
-//      '#ajax' => [
-//        'callback' => '::myAjaxCallback', // 
-//      //'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
-//        'event' => 'change',
-//        'wrapper' => 'edit-adjunto', 
-//        'progress' => [
-//          'type' => 'throbber',
-//          'message' => $this->t('Verifying entry...'),
-//        ],
-//      ]
+      '#ajax' => [
+        'callback' => '::myAjaxCallback', // 
+      //'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering element.
+        'event' => 'change',
+        'wrapper' => 'edit-adjunto', 
+        'progress' => [
+          'type' => 'throbber',
+          'message' => $this->t('Verifying entry...'),
+        ],
+      ]
     ];
 
-   $form['adjunto'] = array(
-    '#type' => 'file',
-  	'#title' => t('Archivo adjunto'),
-    '#prefix' => '<div id="edit-adjunto">',
-    '#suffix' => '</div>',
-    );
- 
+
     
     $form['descripcion'] = [
       '#type' => 'textarea',
@@ -156,6 +150,22 @@ protected function currentUser() {
     $form_state->setRedirect('<front>');
 
   } 
+  public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
+   
+    $asunto = $form_state->getValue('asunto');
+    
+    if($asunto=="Contacto complejo"){
+            $form['adjunto'] = array(
+       '#type' => 'file',
+       '#title' => t('Archivo adjunto'),
+       '#prefix' => '<div id="edit-adjunto">',
+       '#suffix' => '</div>',
+       );
+        return $form['adjunto'];
+      }
+      
+    
+    }
  
 
 }
