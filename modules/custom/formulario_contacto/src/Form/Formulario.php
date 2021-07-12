@@ -164,7 +164,7 @@ protected function currentUser() {
       $form_values = $form_state->cleanValues()->getValues();
       $module = 'formulario_contacto';
       $key = 'contact_message';
-      $to = $form_values['manolo_25vs@hotmail.com'];
+      $to = 'manolo_25vs@hotmail.com';
       $params = $form_values;
       $language_code = $this->languageManager->getDefaultLanguage()->getId();
       $send_now = TRUE;

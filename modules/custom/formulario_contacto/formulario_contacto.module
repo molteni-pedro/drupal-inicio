@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\Component\Utility\SafeMarkup;
+/**
+* Implements hook_mail().
+*/
+function forcontu_email_mail($key, &$message, $params) {
+  $options = array(
+  'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'contact_message':
+        $username = \Drupal::currentUser()->getDisplayName();
+      
+        $message['from'] = \Drupal::config('system.site')->get('mail');
+        
+        $site_name = \Drupal::config('system.site')->get('name');
+        
+        $message['subject'] = t('E-mail sent from @site-name',
+            
+                 array('@site-name' => $site_name), $options);
+        
+        $message['body'][] = t('@name sent you the following message:',
+            
+                  array('@name' => $username), $options);
+    
+         $message['body'][] = SafeMarkup::checkPlain($params['message']);
+    break;
+
+  }
+}
