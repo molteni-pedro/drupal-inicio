@@ -82,9 +82,11 @@ protected function currentUser() {
         ],
       ]
     ];
-
-
-    
+    $form['adjunto'] = [
+      '#type' => 'container',
+      '#attributes' => ['id' => 'edit-adjunto'],
+      ];
+      
     $form['descripcion'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Descripcion'),
@@ -108,7 +110,7 @@ protected function currentUser() {
   }
 
     /**
-   * Validate the title and the checkbox of the form
+   *
    * 
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
@@ -154,15 +156,21 @@ protected function currentUser() {
    
     $asunto = $form_state->getValue('asunto');
     
-    if($asunto=="Contacto complejo"){
-            $form['adjunto'] = array(
+   
+    if($asunto=="2"){
+    
+      $form['adjunto'] = array(
        '#type' => 'file',
        '#title' => t('Archivo adjunto'),
-       '#prefix' => '<div id="edit-adjunto">',
-       '#suffix' => '</div>',
+       '#attributes' => ['id' => 'edit-adjunto'],  
+     
        );
-        return $form['adjunto'];
+      
       }
+      
+    
+        return $form['adjunto'];
+    
       
     
     }
